@@ -10,6 +10,7 @@ import { FooterComponent } from './source/footer/footer.component';
 import { MainComponent } from './home/main/main.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ContactsComponent } from './home/contacts/contacts.component';
+import { ProjectsComponent } from './home/projects/projects.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,9 @@ const routes: Routes = [
           {
             path: 'contacts', component: ContactsComponent
           },
+          {
+            path: 'projects', component: ProjectsComponent
+          },
         ]
       }
     ]
@@ -41,7 +45,8 @@ const routes: Routes = [
     FooterComponent,
     MainComponent,
     AboutUsComponent,
-    ContactsComponent
+    ContactsComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
