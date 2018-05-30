@@ -1,0 +1,88 @@
+.main_header {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  z-index: 100;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #C9C9C9;
+  margin: 0 15px;
+  width: calc(100% - 30px);
+}
+
+figure {
+  margin-bottom: 0!important;
+}
+
+.main_logo {
+  display: block;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.main_nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+
+.main_nav li {
+  height: 100%;
+  cursor: pointer;
+}
+
+.main_nav li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #C9C9C9;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 2vw;
+  transition: 1s all;
+}
+
+.main_nav li a:hover {
+  transform: scale(1.2);
+}
+
+.main_nav li a.active:hover {
+  transform: scale(1);
+}
+
+.main_nav li button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  background: #f5d300;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 2vw;
+  transition: 1s all;
+  border: 0!important;
+  cursor: pointer;
+}
+
+.main_nav li button:hover {
+  background: black;
+  color: #f5d300;
+}
+
+
+.active {
+  border-left: 1px solid #C9C9C9;
+  border-right: 1px solid #C9C9C9;
+}

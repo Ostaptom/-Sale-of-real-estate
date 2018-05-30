@@ -1,0 +1,57 @@
+.main_footer {
+  height: 7vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+
+ul li {
+  height: 100%;
+  font-size: 20px;
+  color: #C9C9C9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.slesh {
+  display: inline-block;
+  vertical-align: baseline;
+  font-size: 26px;
+  margin: 0 2vw;
+  height: auto;
+  line-height: 30px;
+  color: #C9C9C9;
+}
+
+.bold_a {
+  color: #fff;
+  margin-right: 5px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 24px;
+  vertical-align: top;
+}
+
+figure {
+  margin-bottom: 0!important;
+}
+
+.main_logo {
+  display: block;
+  height: 2vh;
+  cursor: pointer;
+}
