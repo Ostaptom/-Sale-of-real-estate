@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './source/header/header.component';
 import { FooterComponent } from './source/footer/footer.component';
 import { MainComponent } from './home/main/main.component';
+import { AboutUsComponent } from './home/about-us/about-us.component';
+import { ContactsComponent } from './home/contacts/contacts.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,12 @@ const routes: Routes = [
         path:'', component: HomeComponent, children: [
           {
             path: '', component: MainComponent
+          },
+          {
+            path: 'about-us', component: AboutUsComponent
+          },
+          {
+            path: 'contacts', component: ContactsComponent
           },
         ]
       }
@@ -31,7 +39,9 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    AboutUsComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

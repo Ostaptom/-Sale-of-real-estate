@@ -3,9 +3,6 @@
   height: calc(100vh - 30px);
 }
 
-.carousel-item {
-  background: red;
-}
 
 .carousel, .carousel-item, .carousel-inner {
   height: 100%;

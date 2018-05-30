@@ -11,6 +11,7 @@
   border-bottom: 1px solid #C9C9C9;
   margin: 0 15px;
   width: calc(100% - 30px);
+  transition: .3s all;
 }
 
 figure {
@@ -52,11 +53,11 @@ figure {
 }
 
 .main_nav li a:hover {
-  transform: scale(1.2);
+  text-decoration: underline;
 }
 
 .main_nav li a.active:hover {
-  transform: scale(1);
+  text-decoration: none;
 }
 
 .main_nav li button {
