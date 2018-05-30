@@ -1,0 +1,27 @@
+.main_container {
+  width: 100%;
+  font-size: 0;
+  padding: 0 5vw;
+  padding-top: 15vh;
+  background: url("../../../assets/img/download.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+app-result-search-one {
+  display: inline-block;
+  width: 30%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+app-result-search-one:nth-child(3n) {
+  margin-right: 0!important;
+}

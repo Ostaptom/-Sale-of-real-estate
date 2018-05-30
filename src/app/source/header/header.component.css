@@ -15,7 +15,7 @@
 }
 
 figure {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .main_logo {
@@ -73,7 +73,7 @@ figure {
   text-decoration: none;
   padding: 0 2vw;
   transition: 1s all;
-  border: 0!important;
+  border: 0 !important;
   cursor: pointer;
 }
 
@@ -82,8 +82,204 @@ figure {
   color: #f5d300;
 }
 
-
 .active {
   border-left: 1px solid #C9C9C9;
   border-right: 1px solid #C9C9C9;
+}
+
+form {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  background: rgba(17, 17, 17, 0.9);
+  position: fixed;
+  top: -120%;
+  left: 15px;
+  z-index: 101;
+  transition: .5s all;
+  font-size: 0;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.close_form {
+  width: 100px;
+  height: 100px;
+  background: #fd0;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: .5s all;
+  margin: 7vh auto;
+  cursor: pointer;
+}
+
+.close_form:hover {
+  transform: rotate(180deg);
+}
+
+.close_form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #f5d300;
+}
+
+.close_form img {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: auto;
+}
+
+.callBack_text {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 5vh;
+}
+
+label {
+  font-size: 16px;
+  color: #C9C9C9;
+}
+
+input {
+  display: inline-block;
+  width: 20%;
+  margin-right: 1% !important;
+}
+
+.btn_contact {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn_contact button {
+  padding: 10px 30px;
+  border: 0!important;
+  background: #f5d300;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+select, textarea {
+  background: transparent;
+  border: 0 !important;
+  border-bottom: 1px solid #bbb !important;
+  display: block;
+  width: 100%;
+  outline: none !important;
+  color: #bbb !important;
+  margin-bottom: 7vh;
+  resize: none;
+}
+
+.label {
+  width: 18%;
+}
+
+.label1 {
+  margin-right: 1%;
+}
+
+select:focus, textarea:focus {
+  border-bottom: 1px solid #f5d300 !important;
+}
+
+select {
+  cursor: pointer;
+}
+
+@supports (--css: variables) {
+  input[type="range"].multirange {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  input[type="range"].multirange.original {
+    position: absolute;
+    width: 12%;
+  }
+
+  input[type="range"].multirange.original::-webkit-slider-thumb {
+    position: relative;
+    z-index: 2;
+  }
+
+  input[type="range"].multirange.original::-moz-range-thumb {
+    transform: scale(1); /* FF doesn't apply position it seems */
+    z-index: 1;
+  }
+
+  input[type="range"].multirange::-moz-range-track {
+    border-color: transparent; /* needed to switch FF to "styleable" control */
+  }
+
+  input[type="range"].multirange.ghost {
+    position: relative;
+    background: var(--track-background);
+    --track-background: linear-gradient(to right,
+    transparent var(--low), var(--range-color) 0,
+    var(--range-color) var(--high), transparent 0
+    ) no-repeat 0 45% / 100% 40%;
+    --range-color: #f5d300;
+  }
+
+  input[type="range"].multirange.ghost::-webkit-slider-runnable-track {
+    background: var(--track-background);
+  }
+
+  input[type="range"].multirange.ghost::-moz-range-track {
+    background: var(--track-background);
+  }
+
+}
+
+.container_inputs1 {
+  width: 100%;
+  position: relative;
+  height: 1.2vw;
+}
+
+.label_title1 {
+  position: absolute;
+  width: 20%;
+  font-size: 1vw;
+  line-height: 1;
+  color: #C9C9C9;
+  top: 0;
+  left: 0;
+}
+
+.label_title2 {
+  position: absolute;
+  width: 20%;
+  font-size: 1vw;
+  line-height: 1;
+  color: #C9C9C9;
+  top: 0;
+  left: 21%;
+}
+
+.label_title3 {
+  position: absolute;
+  width: 20%;
+  font-size: 1vw;
+  line-height: 1;
+  color: #C9C9C9;
+  top: 0;
+  left: 42%;
 }

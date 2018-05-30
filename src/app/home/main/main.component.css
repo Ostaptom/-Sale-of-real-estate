@@ -35,7 +35,13 @@
   text-align: center;
   font-size: 5em;
   color: #fff;
+  cursor: pointer;
   font-weight: normal;
+  transition: .3s all;
+}
+
+.container_text h2:hover {
+  color: #f5d300;
 }
 
 .container_text h3 {

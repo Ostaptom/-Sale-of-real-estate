@@ -16,7 +16,39 @@
       <a href="#" routerLink="/contacts" routerLinkActive="active">Контакти</a>
     </li>
     <li>
-      <button class="search_btn">Пошук квартир</button>
+      <button class="search_btn" (click)="openForm()">Пошук квартир</button>
     </li>
   </ul>
 </header>
+<form #form>
+  <div class="close_form" (click)="closeForm()">
+    <img src="../../../assets/img/close-icon-46ac73f4.png" alt="">
+  </div>
+  <p class="callBack_text">Пошук квартир</p>
+  <div class="container_inputs1">
+    <label class="label_title1">ПЛОЩА КВАРТИРИ М2</label>
+    <label class="label_title2">ЗАГАЛЬНА ВАРТІСТЬ (ГРН.)</label>
+    <label class="label_title3">ЦІНА М2 (ГРН.)</label>
+  </div>
+  <div class="container_inputs">
+    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
+    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
+    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
+    <label class="label label1">
+      <select>
+        <option selected>Кількість кімнат</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </label>
+    <label class="label">
+      <select>
+        <option selected>Проект</option>
+      </select>
+    </label>
+  </div>
+  <label class="btn_contact">
+    <button>Пошук</button>
+  </label>
+</form>

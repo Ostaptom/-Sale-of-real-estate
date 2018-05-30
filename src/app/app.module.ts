@@ -11,6 +11,10 @@ import { MainComponent } from './home/main/main.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ContactsComponent } from './home/contacts/contacts.component';
 import { ProjectsComponent } from './home/projects/projects.component';
+import { ResultSearchComponent } from './home/result-search/result-search.component';
+import { ResultSearchOneComponent } from './home/result-search/result-search-one/result-search-one.component';
+import { RoomOneComponent } from './home/room-one/room-one.component';
+import { ProjectOneComponent } from './home/project-one/project-one.component';
 
 
 const routes: Routes = [
@@ -30,6 +34,15 @@ const routes: Routes = [
           {
             path: 'projects', component: ProjectsComponent
           },
+          {
+            path: 'result-search', component: ResultSearchComponent
+          },
+          {
+            path: 'room/:id', component: RoomOneComponent
+          },
+          {
+            path: 'project/:id', component: ProjectOneComponent
+          },
         ]
       }
     ]
@@ -46,7 +59,11 @@ const routes: Routes = [
     MainComponent,
     AboutUsComponent,
     ContactsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ResultSearchComponent,
+    ResultSearchOneComponent,
+    RoomOneComponent,
+    ProjectOneComponent
   ],
   imports: [
     BrowserModule,

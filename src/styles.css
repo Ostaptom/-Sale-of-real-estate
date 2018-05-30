@@ -13,3 +13,18 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+::-webkit-scrollbar {
+  width: .5vw; /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+  background: #111111;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f5d300;
+}
