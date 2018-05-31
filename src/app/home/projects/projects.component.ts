@@ -81,15 +81,15 @@ export class ProjectsComponent implements OnInit {
 
 
       //this function used to move the items
-      function ResCarousel(e, el, s: number) {
+      function ResCarousel(e, el, s) {
         var leftBtn = ('.leftLst');
         var rightBtn = ('.rightLst');
         var translateXval = 0;
         var divStyle = $(el + ' ' + itemsDiv).css('transform');
         var values = divStyle.match(/-?[\d\.]+/g);
-        var xds = Math.abs(values[4]);
+        var xds = String(Math.abs(values[4]));
         if (e == 0) {
-          translateXval = parseInt(xds) - parseInt(itemWidth * s);
+          translateXval = parseInt(xds) - parseInt(String(itemWidth * s));
           $(el + ' ' + rightBtn).removeClass("over");
 
           if (translateXval <= itemWidth / 2) {
@@ -99,7 +99,7 @@ export class ProjectsComponent implements OnInit {
         }
         else if (e == 1) {
           var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
-          translateXval = parseInt(xds) + parseInt(itemWidth * s);
+          translateXval = parseInt(xds) + parseInt(String(itemWidth * s));
           $(el + ' ' + leftBtn).removeClass("over");
 
           if (translateXval >= itemsCondition - itemWidth / 2) {
@@ -113,7 +113,7 @@ export class ProjectsComponent implements OnInit {
       //It is used to get some elements from btn
       function click(ell, ee) {
         var Parent = "#" + $(ee).parent().attr("id");
-        var slide = $(Parent).attr("data-slide");
+        var slide = String($(Parent).attr("data-slide"));
         ResCarousel(ell, Parent, slide);
       }
 
