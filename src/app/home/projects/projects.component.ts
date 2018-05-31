@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
     $(document).ready(function () {
       var itemsMainDiv = ('.MultiCarousel');
       var itemsDiv = ('.MultiCarousel-inner');
-      var itemWidth = "";
+      var itemWidth = 0;
 
       $('.leftLst, .rightLst').click(function () {
         var condition = $(this).hasClass("leftLst");
@@ -41,7 +41,7 @@ export class ProjectsComponent implements OnInit {
         var itemClass = ('.item');
         var id = 0;
         var btnParentSb = '';
-        var itemsSplit = '';
+        var itemsSplit = [];
         var sampwidth = $(itemsMainDiv).width();
         var bodyWidth = $('body').width();
         $(itemsDiv).each(function () {
@@ -81,10 +81,10 @@ export class ProjectsComponent implements OnInit {
 
 
       //this function used to move the items
-      function ResCarousel(e, el, s) {
+      function ResCarousel(e, el, s: number) {
         var leftBtn = ('.leftLst');
         var rightBtn = ('.rightLst');
-        var translateXval = '';
+        var translateXval = 0;
         var divStyle = $(el + ' ' + itemsDiv).css('transform');
         var values = divStyle.match(/-?[\d\.]+/g);
         var xds = Math.abs(values[4]);

@@ -148,7 +148,7 @@
 }
 
 .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .btn_car {
