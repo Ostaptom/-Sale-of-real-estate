@@ -1,3 +1,6 @@
-<p>
-  flat works!
-</p>
+<div>
+  Flat :
+  <label for="price">Price :<input id="price" type="text" [(ngModel)]="flat.price"></label>
+  <label for="image">Image :<input #imgInp (input)="parseImage(imgInp)" id="image" accept="image/*" type="file"></label>
+  <button (click)="sendFlat()">Add</button>
+</div>

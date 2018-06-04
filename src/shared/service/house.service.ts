@@ -18,7 +18,7 @@ export class HouseService {
   }
 
   findTop(): Observable<House[]> {
-    return this._httpClient.get(`${this.controller}/find-top`).catch(err => Observable.throw(err));
+    return this._httpClient.get(`${this.controller}/find-by-data`).catch(err => Observable.throw(err));
   }
 
   findAll(): Observable<House[]> {

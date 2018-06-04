@@ -19,11 +19,7 @@ export class MyHttpInterceptor implements HttpInterceptor {
       if (err.status === 401) {
         this._userDetailsService.logout();
       }
-      if (err.status === 403) {
         return Observable.throw(err);
-      } else {
-        return Observable.throw(err);
-      }
     });
   }
 

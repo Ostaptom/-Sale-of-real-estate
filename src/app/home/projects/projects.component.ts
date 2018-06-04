@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HouseService} from '../../../shared/service/house.service';
+import {House} from '../../../shared/models/house';
 
 declare var $: any;
 
@@ -9,7 +11,16 @@ declare var $: any;
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  houses: House[] = [];
+
+  constructor(private _houseService: HouseService) {
+    this._houseService.findAll().subscribe(next => {
+      this.houses = next;
+      console.log(next);
+    }, err => {
+      console.error(err);
+    });
+  }
 
   ngOnInit() {
     $(document).ready(function () {
@@ -18,16 +29,14 @@ export class ProjectsComponent implements OnInit {
       var itemWidth = 0;
 
       $('.leftLst, .rightLst').click(function () {
-        var condition = $(this).hasClass("leftLst");
+        var condition = $(this).hasClass('leftLst');
         if (condition)
           click(0, this);
         else
-          click(1, this)
+          click(1, this);
       });
 
       ResCarouselSize();
-
-
 
 
       $(window).resize(function () {
@@ -37,7 +46,7 @@ export class ProjectsComponent implements OnInit {
       //this function define the size of the items
       function ResCarouselSize() {
         var incno = 0;
-        var dataItems = ("data-items");
+        var dataItems = ('data-items');
         var itemClass = ('.item');
         var id = 0;
         var btnParentSb = '';
@@ -49,7 +58,7 @@ export class ProjectsComponent implements OnInit {
           var itemNumbers = $(this).find(itemClass).length;
           btnParentSb = $(this).parent().attr(dataItems);
           itemsSplit = btnParentSb.split(',');
-          $(this).parent().attr("id", "MultiCarousel" + id);
+          $(this).parent().attr('id', 'MultiCarousel' + id);
 
 
           if (bodyWidth >= 1200) {
@@ -68,13 +77,13 @@ export class ProjectsComponent implements OnInit {
             incno = itemsSplit[0];
             itemWidth = sampwidth / incno;
           }
-          $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+          $(this).css({'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers});
           $(this).find(itemClass).each(function () {
             $(this).outerWidth(itemWidth);
           });
 
-          $(".leftLst").addClass("over");
-          $(".rightLst").removeClass("over");
+          $('.leftLst').addClass('over');
+          $('.rightLst').removeClass('over');
 
         });
       }
@@ -90,21 +99,21 @@ export class ProjectsComponent implements OnInit {
         var xds = String(Math.abs(values[4]));
         if (e == 0) {
           translateXval = parseInt(xds) - parseInt(String(itemWidth * s));
-          $(el + ' ' + rightBtn).removeClass("over");
+          $(el + ' ' + rightBtn).removeClass('over');
 
           if (translateXval <= itemWidth / 2) {
             translateXval = 0;
-            $(el + ' ' + leftBtn).addClass("over");
+            $(el + ' ' + leftBtn).addClass('over');
           }
         }
         else if (e == 1) {
           var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
           translateXval = parseInt(xds) + parseInt(String(itemWidth * s));
-          $(el + ' ' + leftBtn).removeClass("over");
+          $(el + ' ' + leftBtn).removeClass('over');
 
           if (translateXval >= itemsCondition - itemWidth / 2) {
             translateXval = itemsCondition;
-            $(el + ' ' + rightBtn).addClass("over");
+            $(el + ' ' + rightBtn).addClass('over');
           }
         }
         $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
@@ -112,8 +121,8 @@ export class ProjectsComponent implements OnInit {
 
       //It is used to get some elements from btn
       function click(ell, ee) {
-        var Parent = "#" + $(ee).parent().attr("id");
-        var slide = String($(Parent).attr("data-slide"));
+        var Parent = '#' + $(ee).parent().attr('id');
+        var slide = String($(Parent).attr('data-slide'));
         ResCarousel(ell, Parent, slide);
       }
 

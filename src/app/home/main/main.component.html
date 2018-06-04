@@ -1,42 +1,16 @@
 <div class="main_container">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-      <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+      <li data-target="#carouselExampleControls" *ngFor="let one of houses;let i = index" [ngClass]="{'active':i==0}"></li>
+      <!--<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>-->
+      <!--<li data-target="#carouselExampleControls" data-slide-to="1"></li>-->
+      <!--<li data-target="#carouselExampleControls" data-slide-to="2"></li>-->
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container_slide w-100 h-100">
+      <div class="carousel-item" *ngFor="let one of houses;let i = index" [ngClass]="{'active':i==0}">
+        <div class="container_slide w-100 h-100" [ngStyle]="{'background-image':'url('+one.image+')'}">
           <div class="container_text">
-            <h2 routerLink="/project/:id">Житловий масив "Пасічна"</h2>
-            <h3>від 14 000 грн/кв.м</h3>
-            <span class="date_slide">Вересень 2016р - Вересень 2018р</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container_slide w-100 h-100">
-          <div class="container_text">
-            <h2 routerLink="/project/:id">Житловий масив "Пасічна"</h2>
-            <h3>від 14 000 грн/кв.м</h3>
-            <span class="date_slide">Вересень 2016р - Вересень 2018р</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container_slide w-100 h-100">
-          <div class="container_text">
-            <h2 routerLink="/project/:id">Житловий масив "Пасічна"</h2>
-            <h3>від 14 000 грн/кв.м</h3>
-            <span class="date_slide">Вересень 2016р - Вересень 2018р</span>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container_slide w-100 h-100">
-          <div class="container_text">
-            <h2 routerLink="/project/:id">Житловий масив "Пасічна"</h2>
+            <h2 [routerLink]="['project',one.id]">{{one.name}}</h2>
             <h3>від 14 000 грн/кв.м</h3>
             <span class="date_slide">Вересень 2016р - Вересень 2018р</span>
           </div>

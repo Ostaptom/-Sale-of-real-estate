@@ -43,7 +43,7 @@ const routes: Routes = [
             path: 'contacts', component: ContactsComponent
           },
           {
-            path: 'projects', children: [
+            path: 'project', children: [
               {
                 path: '', component: ProjectsComponent
               },
@@ -68,6 +68,17 @@ const routes: Routes = [
       },
       {
         path: 'sign-in', component: SignInComponent
+      },
+      {
+        path: 'admin', component: AdminComponent, children:[
+          {
+            path: 'add', component: AddComponent, children:[
+              {
+                path: 'house', component: HouseComponent
+              },
+            ]
+          },
+        ]
       },
     ]
   }

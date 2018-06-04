@@ -5,4 +5,5 @@ export class House {
   information: string;
   flats: Flat[] = [];
   image: string;
+  name:string;
 }

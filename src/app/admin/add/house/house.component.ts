@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {House} from '../../../../shared/models/house';
+import {Flat} from '../../../../shared/models/flat';
+import {HouseService} from '../../../../shared/service/house.service';
+import {FILE_BASE64} from '../../../../shared/utils/file-base64-encoder';
 
 @Component({
   selector: 'app-house',
@@ -7,7 +11,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HouseComponent implements OnInit {
 
-  constructor() { }
+  house: House = new House();
+
+  constructor(private _houseService: HouseService) {
+    this.house.flats = [];
+  }
+
+  addFlat(flat: Flat) {
+    this.house.flats.push(flat);
+  }
+
+  rmFlat(index: number) {
+    console.log(index);
+    this.house.flats.splice(index, 1);
+  }
+
+  parseImage(inp: HTMLInputElement) {
+    FILE_BASE64(inp.files[0]).subscribe(next => {
+      this.house.image = next;
+    });
+  }
+
+  saveHouse() {
+    if (this.house.flats.length == 0) {
+      alert('not enough flats');
+      return;
+    }
+    this._houseService.save(this.house).subscribe(next => {
+      alert('success');
+      console.log(next);
+      this.house = new House();
+    }, err => {
+      console.error(err);
+    });
+  }
 
   ngOnInit() {
   }

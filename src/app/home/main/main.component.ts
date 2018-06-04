@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
 
   constructor(private _houseService: HouseService) {
     this._houseService.findTop().subscribe(next => {
+      console.log(next);
       this.houses = next;
     }, err => {
       console.error(err);

@@ -1,3 +1,15 @@
-<p>
-  house works!
-</p>
+<div>
+  <button (click)="saveHouse()">Save</button>
+  <label for="name">Name : <input id="name" type="text" [(ngModel)]="house.name"></label>
+  <label for="info">Information : <input id="info" type="text" [(ngModel)]="house.information"></label>
+  <label for="imgIn">Image : <input #imgInp (input)="parseImage(imgInp)" id="imgIn" accept="image/*"
+                                    type="file"></label>
+  <app-flat (oFlat)="addFlat($event)"></app-flat>
+  <div>
+    <div *ngFor="let one of house.flats;let i = index">
+      <p (click)="rmFlat(i)">RM</p>
+      <p>{{one.price}}</p>
+      <img src="{{one.image}}" alt="">
+    </div>
+  </div>
+</div>
