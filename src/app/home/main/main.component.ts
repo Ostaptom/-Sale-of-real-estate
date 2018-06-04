@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HouseService} from '../../../shared/service/house.service';
+import {House} from '../../../shared/models/house';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  houses: House[] = [];
+
+  constructor(private _houseService: HouseService) {
+    this._houseService.findTop().subscribe(next => {
+      this.houses = next;
+    }, err => {
+      console.error(err);
+    });
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,10 @@
+<form [formGroup]="userForm" (submit)="signUp()">
+  <label for="name">Name : <input id="name" type="text" formControlName="name"></label>
+  <label for="surname">Surname : <input id="surname" type="text" formControlName="surname"></label>
+  <label for="email">Email : <input id="email" type="email" formControlName="email"></label>
+  <label for="phone">Phone: <input id="phone" type="text" formControlName="phone" [specialCharacters]="SPEC_CHARS" [mask]="PHONE_MASK"></label>
+  <label for="information">Information: <input id="information" type="text" formControlName="information"></label>
+  <label for="password">Password: <input id="password" type="password" formControlName="password"></label>
+  <label for="repassword">Repeat password: <input id="repassword" type="password" formControlName="repassword"></label>
+  <button type="submit">Sign up</button>
+</form>

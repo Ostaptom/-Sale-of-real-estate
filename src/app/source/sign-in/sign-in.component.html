@@ -1,0 +1,6 @@
+<form [formGroup]="credentialsForm" (submit)="login()">
+  <label for="email">Email : <input id="email" type="email" formControlName="email"></label>
+  <label for="pass">Password : <input id="pass" type="password" formControlName="password"></label>
+  <button type="submit">Login</button>
+</form>
+<span>Or <a href="#" routerLink="/sign-up">sign up</a></span>
