@@ -28,4 +28,8 @@ export class HouseService {
   findOne(id: number): Observable<House> {
     return this._httpClient.get(`${this.controller}/find-one/${id}`).catch(err => Observable.throw(err));
   }
+
+  getImage(id:number):Observable<string>{
+    return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
+  }
 }

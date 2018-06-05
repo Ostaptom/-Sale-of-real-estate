@@ -33,7 +33,6 @@ export class MyHttpInterceptor implements HttpInterceptor {
       temp = req.clone();
     }
     if (!isNullOrUndefined(this._userDetailsService.getAccessToken()) && this._userDetailsService.getAccessToken() != '') {
-      console.log('has token');
       authKey = 'Bearer ' + localStorage.getItem('access_token');
     } else if (req.params.get('grant_type') != null) {
       authKey = `Basic  ${basicKey}`;
@@ -48,7 +47,6 @@ export class MyHttpInterceptor implements HttpInterceptor {
         headers = headers.append('Content-Type', 'application/x-www-form-urlencoded;application/json');
       }
     }
-    console.log('hasn`t token');
     if (headers.keys().indexOf('Content-Type') != -1) {
       if (headers.get('Content-Type').indexOf('application/json') == -1) {
         headers = headers.set('Content-Type', temp.headers.get('Content-Type') + ';application/json');

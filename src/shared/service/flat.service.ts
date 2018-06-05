@@ -23,4 +23,9 @@ export class FlatService {
   findAll(): Observable<Flat[]> {
     return this._httpClient.get(`${this.controller}/find-all`).catch(err => Observable.throw(err));
   }
+
+  getImage(id:number):Observable<string>{
+    return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
+  }
+
 }

@@ -26,6 +26,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SignInComponent} from './source/sign-in/sign-in.component';
 import {SignUpComponent} from './source/sign-up/sign-up.component';
 import {NgxMaskModule} from 'ngx-mask';
+import {DirectiveModule} from '../shared/directive/directive.module';
 
 
 const routes: Routes = [
@@ -113,6 +114,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DirectiveModule
   ],
   providers: [
     ...serviceProvider,

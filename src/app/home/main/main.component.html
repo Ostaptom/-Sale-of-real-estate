@@ -8,7 +8,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item" *ngFor="let one of houses;let i = index" [ngClass]="{'active':i==0}">
-        <div class="container_slide w-100 h-100" [ngStyle]="{'background-image':'url('+one.image+')'}">
+        <div class="container_slide w-100 h-100" divMainImage [id]="one.id">
           <div class="container_text">
             <h2 [routerLink]="['project',one.id]">{{one.name}}</h2>
             <h3>від 14 000 грн/кв.м</h3>

@@ -16,13 +16,14 @@ export class ProjectsComponent implements OnInit {
   constructor(private _houseService: HouseService) {
     this._houseService.findAll().subscribe(next => {
       this.houses = next;
+      this.generate();
       console.log(next);
     }, err => {
       console.error(err);
     });
   }
 
-  ngOnInit() {
+  private generate() {
     $(document).ready(function () {
       var itemsMainDiv = ('.MultiCarousel');
       var itemsDiv = ('.MultiCarousel-inner');
@@ -127,6 +128,9 @@ export class ProjectsComponent implements OnInit {
       }
 
     });
+  }
+
+  ngOnInit(): void {
   }
 
 }
