@@ -173,6 +173,15 @@ input {
   cursor: pointer;
 }
 
+.inputG {
+  display: inline-block;
+  border: 0;
+  border-bottom: 1px solid #bbb!important;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+}
+
 select, textarea {
   background: transparent;
   border: 0 !important;

@@ -1,5 +1,5 @@
 import {Observable} from 'rxjs/Observable';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Flat} from '../models/flat';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -27,5 +27,4 @@ export class FlatService {
   getImage(id:number):Observable<string>{
     return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
   }
-
 }

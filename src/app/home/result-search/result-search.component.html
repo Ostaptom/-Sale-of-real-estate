@@ -1,15 +1,11 @@
 <div class="main_container">
-  <h1>Знайдено 111 квартир</h1>
+  <h1>Знайдено {{houses.length}} квартир</h1>
   <div class="container_room">
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
-    <app-result-search-one></app-result-search-one>
+    <div *ngIf="houses.length != 0">
+      <app-result-search-one *ngFor="let one of houses" [house]="one"></app-result-search-one>
+    </div>
+    <div *ngIf="houses.length == 0">
+      <p style="text-align: center;font-size: 24px;margin: 4vh auto">За заданим фільтром нічого не знайдено</p>
+    </div>
   </div>
 </div>

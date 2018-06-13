@@ -1,4 +1,7 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {House} from '../../../shared/models/house';
+import {HouseService} from '../../../shared/service/house.service';
+import {Router} from '@angular/router';
 
 declare var $: any;
 
@@ -9,12 +12,18 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
+  public static filteredHouses: House[] = [];
+  allHouses: House[] = [];
   @ViewChild('header') header: ElementRef;
-
   @ViewChild('form') form: ElementRef;
 
-
-  constructor() { }
+  constructor(private _houseService: HouseService, private _router: Router) {
+    this._houseService.findAll().subscribe(next => {
+      this.allHouses = next;
+    }, err => {
+      console.error(err);
+    });
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -25,6 +34,16 @@ export class HeaderComponent implements OnInit {
       this.header.nativeElement.style.background = 'rgba(0,0,0,0)';
     }
   }
+
+  search(price: number, priceOfOneSpace: number, countRoom: number, space: number, houseName: string) {
+    this._houseService.searchResult(price, priceOfOneSpace, countRoom, space, '').subscribe(next => {
+      HeaderComponent.filteredHouses = next;
+      this._router.navigateByUrl('/result-search');
+    }, err => {
+      console.error(err);
+    });
+  }
+
 
   ngOnInit() {
     // (function() {
@@ -122,7 +141,6 @@ export class HeaderComponent implements OnInit {
   closeForm() {
     this.form.nativeElement.style.top = '-120%';
   }
-
 
 
 }

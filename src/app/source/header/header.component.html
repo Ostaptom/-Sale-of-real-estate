@@ -25,17 +25,17 @@
     <img src="../../../assets/img/close-icon-46ac73f4.png" alt="">
   </div>
   <p class="callBack_text">Пошук квартир</p>
-  <div class="container_inputs1">
-    <label class="label_title1">ПЛОЩА КВАРТИРИ М2</label>
-    <label class="label_title2">ЗАГАЛЬНА ВАРТІСТЬ (ГРН.)</label>
-    <label class="label_title3">ЦІНА М2 (ГРН.)</label>
-  </div>
+  <!--<div class="container_inputs1">-->
+  <!--<label class="label_title1">ПЛОЩА КВАРТИРИ М2</label>-->
+  <!--<label class="label_title2">ЗАГАЛЬНА ВАРТІСТЬ (ГРН.)</label>-->
+  <!--<label class="label_title3">ЦІНА М2 (ГРН.)</label>-->
+  <!--</div>-->
   <div class="container_inputs">
-    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
-    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
-    <input type="range" placeholder="dfdasfedfe" multiple value="0,100"/>
+    <input class="inputG" type="text" placeholder="Площа квартири м2" #spaceIn>
+    <input class="inputG" type="text" placeholder="Загальна вартість (грн.)" #priceIn>
+    <input class="inputG" type="text" placeholder="Ціна м2 (грн.)" #pricePSIn>
     <label class="label label1">
-      <select>
+      <select #countRIn>
         <option selected>Кількість кімнат</option>
         <option>1</option>
         <option>2</option>
@@ -43,12 +43,13 @@
       </select>
     </label>
     <label class="label">
-      <select>
+      <select #nameHIn>
         <option selected>Проект</option>
+        <option *ngFor="let one of allHouses">{{one.name}}</option>
       </select>
     </label>
   </div>
   <label class="btn_contact">
-    <button>Пошук</button>
+    <button (click)="search(priceIn.value,pricePSIn.value,countRIn.value,spaceIn.value,nameHIn.value)">Пошук</button>
   </label>
 </form>

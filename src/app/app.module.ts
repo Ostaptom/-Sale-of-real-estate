@@ -12,7 +12,6 @@ import {AboutUsComponent} from './home/about-us/about-us.component';
 import {ContactsComponent} from './home/contacts/contacts.component';
 import {ProjectsComponent} from './home/projects/projects.component';
 import {ResultSearchComponent} from './home/result-search/result-search.component';
-import {ResultSearchOneComponent} from './home/result-search/result-search-one/result-search-one.component';
 import {RoomOneComponent} from './home/room-one/room-one.component';
 import {ProjectOneComponent} from './home/project-one/project-one.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -27,6 +26,7 @@ import {SignInComponent} from './source/sign-in/sign-in.component';
 import {SignUpComponent} from './source/sign-up/sign-up.component';
 import {NgxMaskModule} from 'ngx-mask';
 import {DirectiveModule} from '../shared/directive/directive.module';
+import {ResultSearchOneComponent} from './home/result-search/result-search-one/result-search-one.component';
 
 
 const routes: Routes = [

@@ -36,4 +36,10 @@ export class HouseService {
   addImage(id:number, image:string):Observable<House> {
     return this._httpClient.post(`${this.controller}/image/${id}`,image,{headers:new HttpHeaders().append('Content-Type','text/plain')}).catch(err => Observable.throw(err));
   }
+
+  searchResult(price:number,priceOfOneSpace:number,countRoom:number,space:number,houseName:string) {
+    return this._httpClient.get(`${this.controller}/filter`,{params: new HttpParams().set("price",price+"").set("priceOfOneSpace",priceOfOneSpace+"").set("countRoom",countRoom+"").set("space",space+"")
+        .set("houseName",houseName)}).catch(err => Observable.throw(err));
+  }
+
 }

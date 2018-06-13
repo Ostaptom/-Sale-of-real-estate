@@ -5,4 +5,8 @@ export class Flat {
   image: string;
   price: number;
   house: House;
+  space: number;
+  priceForOneSpace: number;
+  countRoom: number;
+
 }

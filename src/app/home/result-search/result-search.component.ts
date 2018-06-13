@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {House} from '../../../shared/models/house';
+import {HeaderComponent} from '../../source/header/header.component';
+
 
 @Component({
   selector: 'app-result-search',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultSearchComponent implements OnInit {
 
-  constructor() { }
+  houses:House[]=[];
+  constructor() {
+    this.houses = HeaderComponent.filteredHouses;
+    console.log(this.houses);
+    console.log(HeaderComponent.filteredHouses);
+  }
+
+
 
   ngOnInit() {
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-result-search-one',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-search-one.component.css']
 })
 export class ResultSearchOneComponent implements OnInit {
+
+  @Input() house;
 
   constructor() { }
 
