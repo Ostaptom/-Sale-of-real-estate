@@ -19,7 +19,7 @@ export class MyHttpInterceptor implements HttpInterceptor {
       if (err.status === 401) {
         this._userDetailsService.logout();
       }
-        return Observable.throw(err);
+      return Observable.throw(err);
     });
   }
 
@@ -47,9 +47,13 @@ export class MyHttpInterceptor implements HttpInterceptor {
         headers = headers.append('Content-Type', 'application/x-www-form-urlencoded;application/json');
       }
     }
-    if (headers.keys().indexOf('Content-Type') != -1) {
-      if (headers.get('Content-Type').indexOf('application/json') == -1) {
-        headers = headers.set('Content-Type', temp.headers.get('Content-Type') + ';application/json');
+    if (temp.headers.keys().indexOf('Content-Type') != -1) {
+      if (temp.headers.get('Content-Type').indexOf('text/plain') == -1) {
+        if (temp.headers.get('Content-Type').indexOf('application/json') == -1) {
+          headers = headers.set('Content-Type', temp.headers.get('Content-Type') + ';application/json');
+        }
+      } else {
+        headers = headers.append('Content-Type', 'text/plain');
       }
     } else {
       headers = headers.append('Content-Type', 'application/json');

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {House} from '../models/house';
 import 'rxjs/add/operator/catch';
@@ -31,5 +31,9 @@ export class HouseService {
 
   getImage(id:number):Observable<string>{
     return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
+  }
+
+  addImage(id:number, image:string):Observable<House> {
+    return this._httpClient.post(`${this.controller}/image/${id}`,image,{headers:new HttpHeaders().append('Content-Type','text/plain')}).catch(err => Observable.throw(err));
   }
 }

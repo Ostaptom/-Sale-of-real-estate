@@ -38,9 +38,13 @@ export class HouseComponent implements OnInit {
       return;
     }
     this._houseService.save(this.house).subscribe(next => {
-      alert('success');
-      console.log(next);
-      this.house = new House();
+      this._houseService.addImage(next.id, this.house.image).subscribe(next => {
+        console.log(next);
+        alert('success');
+        this.house = new House();
+      }, err => {
+        console.error(err);
+      });
     }, err => {
       console.error(err);
     });
