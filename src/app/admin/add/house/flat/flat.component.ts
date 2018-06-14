@@ -18,8 +18,10 @@ export class FlatComponent implements OnInit {
   }
 
   sendFlat() {
-    if (!this.flat.images.image || this.flat.images.image == ''||!this.flat.images.floorImage || this.flat.images.floorImage == '')
+    if (!this.flat.images.image || this.flat.images.image == ''||!this.flat.images.floorImage || this.flat.images.floorImage == '') {
+      alert('choose image for flat');
       return;
+    }
     this.oFlat.emit(this.flat);
     this.flat = new Flat();
     this.flat.images = new FlatImageWrapper();

@@ -19,6 +19,7 @@ export class HouseComponent implements OnInit {
 
   constructor(private _houseService: HouseService, private _flatService: FlatService, private _imageService: ImageService) {
     this.house.flats = [];
+    this.house.images = [];
   }
 
   addFlat(flat: Flat) {
@@ -54,15 +55,26 @@ export class HouseComponent implements OnInit {
     if (this.house.flats.length == 0) {
       alert('not enough flats');
       return;
+    } if (this.house.images.length == 0) {
+      alert('not enough images');
+      return;
+    }if (!this.house.image){
+      alert('no image for house');
+      return
     }
     // for (let one of this.house.flats) {
     //   one.countRoom = 1;
     //   one.priceForOneSpace = 1;
     //   one.space = 1;
     // }
+    // if(!this.house.images)
+    //   this.house.images = [];
     let tempImsges: Image[] = [];
     Object.assign(tempImsges, this.house.images);
+    // console.log('tempImsges  ',tempImsges);
     this.house.images = [];
+    // console.log('tempImsges  ',tempImsges);
+    // console.log('this.house.images   ',this.house.images);
     this._houseService.save(this.house).subscribe(hou => {
       let fl: Subject<number> = new Subject<number>();
       let im: Subject<number> = new Subject<number>();
