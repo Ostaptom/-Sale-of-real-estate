@@ -60,6 +60,9 @@ export class HouseComponent implements OnInit {
       one.priceForOneSpace = 1;
       one.space = 1;
     }
+    let tempImsges: Image[];
+    Object.assign(tempImsges, this.house.images);
+    this.house.images = [];
     this._houseService.save(this.house).subscribe(hou => {
       let fl: Subject<number> = new Subject<number>();
       let im: Subject<number> = new Subject<number>();
@@ -72,8 +75,8 @@ export class HouseComponent implements OnInit {
           console.error(err);
         });
       }
-      for (let i = 0; i < this.house.images.length; i++) {
-        this._imageService.save(this.house.images[i].image,hou.id).subscribe(next => {
+      for (let i = 0; i < tempImsges.length; i++) {
+        this._imageService.save(tempImsges[i].image, hou.id).subscribe(next => {
           im.next(i);
         }, err => {
           console.error(err);
