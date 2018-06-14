@@ -55,12 +55,12 @@ export class HouseComponent implements OnInit {
       alert('not enough flats');
       return;
     }
-    for (let one of this.house.flats) {
-      one.countRoom = 1;
-      one.priceForOneSpace = 1;
-      one.space = 1;
-    }
-    let tempImsges: Image[];
+    // for (let one of this.house.flats) {
+    //   one.countRoom = 1;
+    //   one.priceForOneSpace = 1;
+    //   one.space = 1;
+    // }
+    let tempImsges: Image[] = [];
     Object.assign(tempImsges, this.house.images);
     this.house.images = [];
     this._houseService.save(this.house).subscribe(hou => {
