@@ -100,14 +100,15 @@ export class HouseComponent implements OnInit {
         }
       });
       im.asObservable().subscribe(next => {
-        if (next == hou.images.length - 1) {
+        if (next == tempImsges.length - 1) {
           bl.next(blv++);
         }
       });
       bl.asObservable().subscribe(next => {
+        // console.log(next);
         if (next == 1) {
           this._houseService.addImage(hou.id, this.house.image).subscribe(next => {
-            console.log(next);
+            // console.log(next);
             alert('success');
             this.house = new House();
           }, err => {
