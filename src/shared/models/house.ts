@@ -8,4 +8,5 @@ export class House {
   image: string;
   name:string;
   images: Image[]=[];
+  maps:string;
 }

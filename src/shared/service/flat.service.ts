@@ -29,6 +29,14 @@ export class FlatService {
     return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
   }
 
+  getImageF(id:number):Observable<string>{
+    return this._httpClient.get(`${this.controller}/image-floor/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
+  }
+
+  getHouseForFloor(id:number):Observable<string>{
+    return this._httpClient.get(`${this.controller}/house/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
+  }
+
   setImage(id:number, images:FlatImageWrapper):Observable<Flat>{
     return this._httpClient.post(`${this.controller}/image/${id}`,JSON.stringify(images)).catch(err => Observable.throw(err));
   }

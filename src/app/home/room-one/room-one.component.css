@@ -37,6 +37,7 @@ h1 {
   width: 29%;
   font-size: 1.5rem;
 }
+img{ transition: .5s all;}
 
 .container_info {
   color: #fff;

@@ -5,6 +5,7 @@ import {ImgFileDirective} from './directives/img-file.directive';
 import {ImgMainImageDirective} from './directives/img-main-image.directive';
 import {DivImageDirective} from './directives/div-image.directive';
 import {ImgImageDirective} from './directives/img-image.directive';
+import {ImgFloorFileDirective} from './directives/img-floor-file.directive';
 
 @NgModule({
   declarations:[
@@ -13,7 +14,8 @@ import {ImgImageDirective} from './directives/img-image.directive';
     DivImageDirective,
     ImgFileDirective,
     ImgMainImageDirective,
-    ImgImageDirective
+    ImgImageDirective,
+    ImgFloorFileDirective
   ],
   exports:[
     DivFileDirective,
@@ -21,7 +23,8 @@ import {ImgImageDirective} from './directives/img-image.directive';
     DivImageDirective,
     ImgFileDirective,
     ImgMainImageDirective,
-    ImgImageDirective
+    ImgImageDirective,
+    ImgFloorFileDirective
   ]
 })
 export class DirectiveModule {}

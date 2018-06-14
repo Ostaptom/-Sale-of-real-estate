@@ -20,7 +20,7 @@ export class ProjectOneComponent implements OnInit {
     this._activatedRoute.params.subscribe(value =>
       this._houseService.findOne(value['id']).subscribe(next => {
         this.house = next;
-        console.log(next.images);
+        console.log(next.maps);
         this.content = true;
       }, err => {
         console.error(err);
@@ -33,7 +33,7 @@ export class ProjectOneComponent implements OnInit {
       if (this.prevEl == el) {
         if (this.big) {
           console.log(this.big);
-          el.style.width = 'auto';
+          el.style.width = '10vw';
           this.big = false;
         } else {
           console.log(this.big);
@@ -41,7 +41,7 @@ export class ProjectOneComponent implements OnInit {
           this.big = true;
         }
       } else {
-        this.prevEl.style.width = 'auto';
+        this.prevEl.style.width = '10vw';
         el.style.width = '30vw';
         this.prevEl = el;
         this.big = true;

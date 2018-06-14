@@ -11,12 +11,12 @@ export class ImgImageDirective implements OnInit {
   constructor(private element: ElementRef, private _imageService: ImageService) {
   }
 
-  ngOnInit(): void {
-    this._imageService.getImage(this.id).subscribe(next => {
-      this.element.nativeElement.src = next;
-    }, err => {
-      console.error(err);
-    });
-  }
+ngOnInit(): void {
+  this._imageService.getImage(this.id).subscribe(next => {
+  this.element.nativeElement.src = next;
+}, err => {
+  console.error(err);
+});
+}
 
 }

@@ -28,6 +28,7 @@ import {NgxMaskModule} from 'ngx-mask';
 import {DirectiveModule} from '../shared/directive/directive.module';
 import {ResultSearchOneComponent} from './home/result-search/result-search-one/result-search-one.component';
 import { FlatListComponent } from './home/flat-list/flat-list.component';
+import {PipeModule} from '../shared/pipe/pipe.module';
 
 
 const routes: Routes = [
@@ -58,7 +59,10 @@ const routes: Routes = [
             path: 'result-search', component: ResultSearchComponent
           },
           {
-            path: 'room/:id', component: RoomOneComponent
+            path: 'room/:idh', children:[
+              {path:'',component: FlatListComponent},
+              {path:':id',component: RoomOneComponent}
+            ]
           },
         ]
       },
@@ -116,7 +120,8 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DirectiveModule
+    DirectiveModule,
+    PipeModule
   ],
   providers: [
     ...serviceProvider,

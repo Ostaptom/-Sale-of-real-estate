@@ -2,6 +2,7 @@
   <button (click)="saveHouse()">Save</button>
   <label for="name">Name : <input id="name" type="text" [(ngModel)]="house.name"></label>
   <label for="info">Information : <input id="info" type="text" [(ngModel)]="house.information"></label>
+  <label for="maps">Maps : <input id="maps" type="text" [(ngModel)]="house.maps"></label>
   <label for="imgIn">Image : <input #imgInp (input)="parseImage(imgInp)" id="imgIn" accept="image/*"
                                     type="file"></label>
   <div>

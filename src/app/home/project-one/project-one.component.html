@@ -8,12 +8,15 @@
       <span class="date_slide">Вересень 2016р - Вересень 2018р</span>
       <a href="https://google.com" target="_blank">Офіційна сторнка проекту</a>
       <p class="description">{{house.information}}</p>
+      <a [routerLink]="['/','room',house.id]">Переглянути квартири</a>
     </div>
 </div>
 </div>
     <div *ngIf="content" class="main_container">
       <img *ngFor="let one of house.images" imgImage [id]="one.id" #img
-           [ngStyle]="{'max-width':'30vw','min-width':'10vw','display':'inline-block','border':'solid 1px #ccc'}" (click)="toggleSize(img)">
+           [ngStyle]="{'max-width':'30vw','min-width':'10vw','width':'10vw','display':'inline-block','border':'solid 1px #ccc'}" (click)="toggleSize(img)">
     </div>
+<div *ngIf="content"  [innerHTML]="house.maps|safeHtml">sfg sdfg dsfgsfd gsdf gsdfg sdf gsdf g</div>
+
 
 
