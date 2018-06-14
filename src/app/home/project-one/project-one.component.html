@@ -1,7 +1,7 @@
 <div class="main_container">
   <div class="container_index">
-    <div class="left">
-      <img imgMainImage [id]="house.id" alt="" src="">
+    <div *ngIf="content" class="left">
+      <img imgMainImage [id]="house.id" alt="">
     </div>
     <div class="right">
       <h1>{{house.name}}</h1>
@@ -9,5 +9,11 @@
       <a href="https://google.com" target="_blank">Офіційна сторнка проекту</a>
       <p class="description">{{house.information}}</p>
     </div>
-  </div>
 </div>
+</div>
+    <div *ngIf="content" class="main_container">
+      <img *ngFor="let one of house.images" imgImage [id]="one.id" #img
+           [ngStyle]="{'max-width':'30vw','min-width':'10vw','display':'inline-block','border':'solid 1px #ccc'}" (click)="toggleSize(img)">
+    </div>
+
+

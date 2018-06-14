@@ -17,6 +17,8 @@
   padding-bottom: 3rem;
 }
 
+img{ transition: 5s all;}
+
 .left {
   width: 65%;
 }

@@ -1,4 +1,5 @@
 import {Flat} from './flat';
+import {Image} from './image';
 
 export class House {
   id: number;
@@ -6,4 +7,5 @@ export class House {
   flats: Flat[] = [];
   image: string;
   name:string;
+  images: Image[]=[];
 }

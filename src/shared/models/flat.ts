@@ -1,4 +1,5 @@
 import {House} from './house';
+import {FlatImageWrapper} from './utils/FlatImageWrapper';
 
 export class Flat {
   id: number;
@@ -8,5 +9,6 @@ export class Flat {
   space: number;
   priceForOneSpace: number;
   countRoom: number;
+  images:FlatImageWrapper;
 
 }

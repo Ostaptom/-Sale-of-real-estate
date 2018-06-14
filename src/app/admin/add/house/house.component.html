@@ -4,12 +4,21 @@
   <label for="info">Information : <input id="info" type="text" [(ngModel)]="house.information"></label>
   <label for="imgIn">Image : <input #imgInp (input)="parseImage(imgInp)" id="imgIn" accept="image/*"
                                     type="file"></label>
+  <div>
+  <label for="imgInS">Images : <input #imgInpS id="imgInS" accept="image/*"
+                                    type="file"></label>
+    <button (click)="parseImageS(imgInpS)">Add image</button>
+  </div>
   <app-flat (oFlat)="addFlat($event)"></app-flat>
   <div>
     <div *ngFor="let one of house.flats;let i = index">
       <p (click)="rmFlat(i)">RM</p>
       <p>{{one.price}}</p>
-      <img src="{{one.image}}" alt="">
+      <img src="{{one.images.image}}" alt="">
     </div>
+  </div>
+  <div *ngFor="let one of house.images;let i = index">
+    <button (click)="rmImg(i)">RM</button>
+  <div [ngStyle]="{'background-image':'url('+one.image+')','width':'15vw','height':'15vh','background-repeat':'no-repeat','background-size':'cover'}"></div>
   </div>
 </div>

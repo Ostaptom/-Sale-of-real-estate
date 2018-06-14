@@ -27,6 +27,7 @@ import {SignUpComponent} from './source/sign-up/sign-up.component';
 import {NgxMaskModule} from 'ngx-mask';
 import {DirectiveModule} from '../shared/directive/directive.module';
 import {ResultSearchOneComponent} from './home/result-search/result-search-one/result-search-one.component';
+import { FlatListComponent } from './home/flat-list/flat-list.component';
 
 
 const routes: Routes = [
@@ -105,7 +106,8 @@ const routes: Routes = [
     HouseComponent,
     FlatComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    FlatListComponent,
   ],
   imports: [
     BrowserModule,

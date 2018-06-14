@@ -1,6 +1,10 @@
 <div>
   Flat :
   <label for="price">Price :<input id="price" type="text" [(ngModel)]="flat.price"></label>
+  <label for="price">M2 :<input id="m2" type="text" [(ngModel)]="flat.space"></label>
+  <label for="price">Price per m2 :<input id="priceM" type="text" [(ngModel)]="flat.priceForOneSpace"></label>
+  <label for="price">CountRomm :<input id="count" type="text" [(ngModel)]="flat.countRoom"></label>
   <label for="image">Image :<input #imgInp (input)="parseImage(imgInp)" id="image" accept="image/*" type="file"></label>
+  <label for="imageF">Floor image :<input #imgFInp (input)="parseImageF(imgFInp)" id="imageF" accept="image/*" type="file"></label>
   <button (click)="sendFlat()">Add</button>
 </div>

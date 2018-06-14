@@ -4,6 +4,7 @@ import {Flat} from '../models/flat';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {Injectable} from '@angular/core';
+import {FlatImageWrapper} from '../models/utils/FlatImageWrapper';
 
 @Injectable()
 export class FlatService {
@@ -28,7 +29,7 @@ export class FlatService {
     return this._httpClient.get(`${this.controller}/image/${id}`,{responseType:'text'}).catch(err => Observable.throw(err));
   }
 
-  setImage(id:number, image:string):Observable<Flat>{
-    return this._httpClient.post(`${this.controller}/image/${id}`,image,{headers:new HttpHeaders().append('Content-Type','text/plain')}).catch(err => Observable.throw(err));
+  setImage(id:number, images:FlatImageWrapper):Observable<Flat>{
+    return this._httpClient.post(`${this.controller}/image/${id}`,JSON.stringify(images)).catch(err => Observable.throw(err));
   }
 }
